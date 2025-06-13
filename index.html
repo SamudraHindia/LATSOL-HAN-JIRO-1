@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kuis Hukum Administrasi Negara</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+    .question { margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
+    .question h3 { margin-top: 0; }
+    .options label { display: block; margin: 5px 0; }
+    .result { font-weight: bold; margin-top: 20px; }
+    button { padding: 10px 20px; background: #4CAF50; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #45a049; }
+  </style>
+</head>
+<body>
+
+  <h1>Kuis Interaktif: Hukum Administrasi Negara BY = JIRO</h1>
+
+  <form id="quizForm">
+    <!-- Soal-soal akan dimasukkan di sini lewat JavaScript -->
+  </form>
+
+  <button onclick="checkAnswers()">Periksa Jawaban</button>
+  <div class="result" id="result"></div>
+
+  <script>
+    const questions = [
+      {
+        question: "1. Keputusan Tata Usaha Negara (KTUN) adalah...",
+        options: ["A. Keputusan bersama antara presiden dan DPR", "B. Keputusan tertulis yang dikeluarkan pejabat TUN", "C. Peraturan pemerintah yang mengikat umum", "D. Surat keputusan pengadilan"],
+        answer: "B"
+      },
+      {
+        question: "2. Asas legality dalam hukum administrasi berarti...",
+        options: ["A. Setiap tindakan pejabat harus berdasarkan perintah lisan", "B. Pejabat bebas bertindak tanpa batas", "C. Semua tindakan harus berdasarkan hukum", "D. Semua peraturan tidak mengikat"],
+        answer: "C"
+      },
+      {
+        question: "3. Perbedaan antara tindakan faktual dan KTUN adalah...",
+        options: ["A. KTUN tidak bisa digugat", "B. Tindakan faktual selalu tertulis", "C. Tindakan faktual bukan keputusan tertulis", "D. KTUN bersifat tidak final"],
+        answer: "C"
+      },
+      {
+        question: "4. PTUN berwenang mengadili sengketa...",
+        options: ["A. Perdata", "B. Tata Usaha Negara", "C. Pidana", "D. Konstitusi"],
+        answer: "B"
+      },
+      {
+        question: "5. UU yang mengatur tentang PTUN adalah...",
+        options: ["A. UU No. 10 Tahun 2004", "B. UU No. 5 Tahun 1986", "C. UU No. 39 Tahun 1999", "D. UU No. 30 Tahun 2004"],
+        answer: "B"
+      },
+
+
+      
+      {
+        question: "6. Sumber hukum administrasi tertinggi di Indonesia adalah...",
+        options : ["A. TAP MPR","B. UUD 1945","C. Undang-Undang","D. Peraturan Pemerintah"],
+        answer: "B"
+      },
+ 
+
+      {
+        question: "7. Pelanggaran asas kontradiktur-beginsel terjadi bila...",
+        options : ["A. Pejabat tidak memeriksa syarat materiel","B. Pihak yang terkena keputusan tak diberi kesempatan didengar","C. Keputusan diambil tanpa dasar hukum","D. Kerugian keuangan negara tidak dihitung"],
+        answer: "B"
+      },
+ 
+
+      {
+        question: "8. Salah satu ciri keputusan TUN adalah...",
+        options : ["A. Bersifat umum dan tidak final","B. Bersifat konkret, individual, dan final","C. Hanya berlaku untuk perusahaan","D. Tidak dapat digugat"],
+        answer: "B"
+      },
+ 
+
+      {
+        question: "9. Sengketa TUN diselesaikan oleh...",
+        options : ["A. Mahkamah Konstitusi","B. Pengadilan Negeri","C. Pengadilan Tata Usaha Negara","D. Mahkamah Agung"],
+        answer: "C"
+      },
+ 
+
+      {
+        question: "10. Objek sengketa TUN adalah...",
+        options : ["A. UU","B. Keputusan pengadilan","C. Keputusan pejabat administrasi negara","D. Perjanjian internasional"],
+        answer: "C"
+      },
+ 
+
+      {
+        question: "11. Diskresi dalam HAN adalah...",
+        options : ["A. Pelanggaran hukum oleh pejabat","B. Kewenangan mutlak DPR","C. Kebebasan bertindak pejabat saat hukum tidak jelas","D. Tindakan sewenang-wenang"],
+        answer: "C"
+      },
+ 
+
+      {
+        question: "12. Yang bukan termasuk upaya administratif ialah...",
+        options : ["A. Keberatan","B. Banding administratif","C. Gugatan ke PTUN","D. Peninjauan kembali"],
+        answer: "D"
+      },
+ 
+
+  {
+    question: "13. AUPB merupakan bagian dari...",
+    options: ["A. Hukum pidana", "B. Hukum perdata", "C. Hukum administrasi negara", "D. Teori konstitusi"],
+    answer: "C"
+  },
+  {
+    question: "14. Prinsip kecermatan termasuk dalam...",
+    options: ["A. Asas keadilan", "B. Asas kecermatan", "C. Asas akuntabilitas", "D. Asas kepastian hukum"],
+    answer: "B"
+  },
+  {
+    question: "15. Gugatan SK Pemecatan PNS karena cacat prosedur diajukan ke...",
+    options: ["A. Pengadilan Negeri", "B. Mahkamah Konstitusi", "C. Pengadilan TUN", "D. Mahkamah Agung"],
+    answer: "C"
+  },
+  {
+    question: "16. Yang termasuk objek sengketa HAN adalah...",
+    options: ["A. Perda", "B. Surat keputusan pemberhentian PNS", "C. KUHP", "D. Hasil Pemilu"],
+    answer: "B"
+  },
+  {
+    question: "17. SK TUN tidak sah jika...",
+    options: ["A. Diterbitkan oleh pejabat berwenang", "B. Tidak ada kerugian", "C. Bertentangan dengan hukum", "D. Sudah kadaluarsa"],
+    answer: "C"
+  },
+  {
+    question: "18. Tindakan konkret pejabat yang tidak berupa keputusan disebut...",
+    options: ["A. keputusan tertulis", "B. Diskresi", "C. Perbuatan pemerintahan nyata", "D. Aturan pelaksana"],
+    answer: "C"
+  },
+  {
+    question: "19. Upaya administratif dilakukan dulu karena...",
+    options: ["A. Menghindari pengadilan", "B. Asas ultimum remedium", "C. Asas subsidiaritas", "D. Meningkatkan beban MA"],
+    answer: "C"
+  },
+  {
+    question: "20. Kewenangan utama Ombudsman adalah...",
+    options: ["A. Mengadili sengketa", "B. Mengatur kebijakan", "C. Mengawasi pelayanan publik", "D. Menetapkan peraturan"],
+    answer: "C"
+  },
+  {
+    question: "21. Hierarki peraturan perundangan diatur dalam...",
+    options: ["A. UU 10/2004", "B. UU 12/2011", "C. TAP MPR", "D. Perpres"],
+    answer: "B"
+  },
+  {
+    question: "22. Diskresi boleh digunakan bila...",
+    options: ["A. Tidak ada hukum tertulis", "B. Untuk mempercepat proyek", "C. Atas perintah lisan", "D. Tidak diawasi"],
+    answer: "A"
+  },
+  {
+    question: "23. Yang berwenang membatalkan Perda bertentangan hukum adalah...",
+    options: ["A. Presiden", "B. Mendagri", "C. Mahkamah Konstitusi", "D. DPRD"],
+    answer: "B"
+  },
+  {
+    question: "24. Bentuk pertanggungjawaban pejabat jika timbul kerugian negara adalah...",
+    options: ["A. Sanksi pidana langsung", "B. Teguran lisan", "C. Ganti rugi administrasi", "D. Peringatan"],
+    answer: "C"
+  },
+  {
+    question: "25. Ciri tindakan hukum administrasi adalah...",
+    options: ["A. Normatif", "B. Abstrak", "C. Konkret dan individual", "D. Tidak mengikat"],
+    answer: "C"
+  },
+  {
+    question: "26. KTUN harus bersifat...",
+    options: ["A. Abstrak", "B. Konkret, individual, final", "C. Umum", "D. Tidak sah"],
+    answer: "B"
+  },
+  {
+    question: "27. Sengketa perizinan diajukan ke...",
+    options: ["A. Pengadilan Umum", "B. Pengadilan Negeri", "C. PTUN", "D. Bawaslu"],
+    answer: "C"
+  },
+  {
+    question: "28. Perlindungan hukum warga terhadap pejabat TUN adalah...",
+    options: ["A. Hak konstitusional", "B. Ombudsman", "C. Gugatan ke PTUN", "D. Laporan ke DPR"],
+    answer: "C"
+  },
+  {
+    question: "29. Pencabutan izin tanpa alasan sah melanggar asas...",
+    options: ["A. Keterbukaan", "B. Kepastian hukum", "C. Keadilan", "D. Prosedural"],
+    answer: "B"
+  },
+  {
+    question: "30. Pejabat administrasi negara harus tunduk pada prinsip...",
+    options: ["A. Kekuasaan absolut", "B. Supremasi hukum", "C. Diskresi mutlak", "D. Kekuasaan raja"],
+    answer: "B"
+  },
+  {
+    question: "31. Asas umum pemerintahan yang baik (AUPB) bersifat...",
+    options: ["A. Hanya etika", "B. Tidak mengikat", "C. Normatif dan mengikat", "D. Hanya saran"],
+    answer: "C"
+  },
+  {
+    question: "32. Sumber hukum administrasi negara terutama berasal dari...",
+    options: ["A. Hukum adat", "B. Undang-Undang", "C. Konvensi internasional", "D. Hukum perdata"],
+    answer: "B"
+  },
+  {
+    question: "33. Keputusan Tata Usaha Negara harus bersifat...",
+    options: ["A. Final dan mengikat", "B. Tidak mengikat", "C. Hanya internal", "D. Hanya saran"],
+    answer: "A"
+  },
+  {
+    question: "34. Penerapan asas legalitas berarti...",
+    options: ["A. Pemerintah bebas bertindak", "B. Hanya menteri yang berwenang", "C. Harus berdasarkan hukum", "D. Tanpa prosedur"],
+    answer: "C"
+  },
+  {
+    question: "35.Salah satu fungsi hukum administrasi negara adalah...",
+    options: ["A. Melindungi warga negara", "B. Menetapkan KUHP", "C. Membatasi DPR", "D. Menentukan agama"],
+    answer: "A"
+  },
+  {
+    question: "36. Diskresi yang sah dilakukan jika...",
+    options: ["A. Bertentangan dengan hukum", "B. Tidak ada aturan yang jelas", "C. Untuk kepentingan pribadi", "D. Di luar jabatan"],
+    answer: "B"
+  },
+  {
+    question: "37. Kewenangan pejabat publik bersumber dari...",
+    options: ["A. Kekuasaan pribadi", "B. Mandat rakyat", "C. Peraturan perundang-undangan", "D. Kesepakatan politik"],
+    answer: "C"
+  },
+  {
+    question: "38. Pengawasan terhadap administrasi negara dilakukan oleh...",
+    options: ["A. Presiden saja", "B. DPR saja", "C. Lembaga pengawas internal dan eksternal", "D. Partai politik"],
+    answer: "C"
+  },
+  {
+    question: "39. Salah satu contoh perbuatan melawan hukum oleh pejabat adalah...",
+    options: ["A. Mengikuti prosedur", "B. Bertindak tanpa kewenangan", "C. Menjalankan putusan", "D. Membuat laporan"],
+    answer: "B"
+  },
+  {
+    question: "40. Bentuk pertanggungjawaban pejabat dapat berupa...",
+    options: ["A. Penghargaan", "B. Kenaikan jabatan", "C. Teguran, sanksi, ganti rugi", "D. Liburan dinas"],
+    answer: "C"
+  },
+  {
+    question: "41. Hukum administrasi negara berkembang seiring dengan...",
+    options: ["A. Penurunan fungsi pemerintah", "B. Perkembangan negara hukum", "C. Kekuasaan tanpa batas", "D. Hukum pidana"],
+    answer: "B"
+  },
+  {
+    question: "42. PTUN berfungsi untuk...",
+    options: ["A. Menyidangkan perkara pidana", "B. Menyelesaikan sengketa TUN", "C. Mengatur perundang-undangan", "D. Mengawasi anggaran"],
+    answer: "B"
+  },
+  {
+    question: "43. Putusan PTUN bisa diajukan banding ke...",
+    options: ["A. DPR", "B. Mahkamah Konstitusi", "C. Pengadilan Tinggi TUN", "D. Kejaksaan"],
+    answer: "C"
+  },
+  {
+    question: "44. KTUN yang bersifat final artinya...",
+    options: ["A. Masih bisa diubah", "B. Hanya berlaku sementara", "C. Tidak dapat diganggu gugat secara administratif", "D. Diterbitkan oleh pengadilan"],
+    answer: "C"
+  },
+  {
+    question: "45. Pihak yang dapat mengajukan gugatan TUN adalah...",
+    options: ["A. Warga negara yang dirugikan secara langsung", "B. Semua anggota DPR", "C. Lembaga internasional", "D. Jaksa Agung"],
+    answer: "A"
+  },
+  {
+    question: "46. Kewenangan diskresi harus digunakan dengan prinsip...",
+    options: ["A. Kepentingan pribadi", "B. Kewenangan absolut", "C. Kepatutan dan proporsionalitas", "D. Arahan politik"],
+    answer: "C"
+  },
+  {
+    question: "47. Salah satu ciri Hukum Administrasi Negara adalah...",
+    options: ["A. Menangani perkara pidana", "B. Mengatur hubungan vertikal", "C. Mengatur hubungan horizontal", "D. Tidak berkaitan dengan lembaga negara"],
+    answer: "B"
+  },
+  {
+    question: "48. Pejabat publik yang tidak menjalankan tugas sesuai hukum dapat dikenakan...",
+    options: ["A. Apresiasi", "B. Sanksi administratif", "C. Kenaikan jabatan", "D. Cuti bersama"],
+    answer: "B"
+  },
+  {
+    question: "49. Penerapan asas akuntabilitas dalam pemerintahan berarti...",
+    options: ["A. Semua tindakan dapat dipertanggungjawabkan", "B. Tidak perlu laporan", "C. Bersifat rahasia", "D. Dilakukan sendiri tanpa kontrol"],
+    answer: "A"
+  },
+  {
+    question: "50. Gugatan ke PTUN harus diajukan dalam jangka waktu...",
+    options: ["A. 30 hari sejak terbitnya keputusan", "B. 90 hari sejak diketahui", "C. 1 tahun sejak diterbitkan", "D. Kapan saja"],
+    answer: "B"
+  },
+  
+
+
+
+
+
+
+
+
+    ];
+
+    const form = document.getElementById("quizForm");
+
+    questions.forEach((q, idx) => {
+      const div = document.createElement("div");
+      div.className = "question";
+      div.innerHTML = `<h3>${q.question}</h3>` + q.options.map((opt, i) => {
+        const letter = opt[0];
+        return `<label><input type="radio" name="q${idx}" value="${letter}" /> ${opt}</label>`;
+      }).join("");
+      form.appendChild(div);
+    });
+
+    function checkAnswers() {
+      let score = 0;
+      questions.forEach((q, idx) => {
+        const selected = document.querySelector(`input[name="q${idx}"]:checked`);
+        if (selected && selected.value === q.answer) {
+          score++;
+        }
+      });
+      document.getElementById("result").innerText = `Skor Anda: ${score} dari ${questions.length}`;
+    }
+  </script>
+</body>
+</html>

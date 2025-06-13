@@ -4,13 +4,97 @@
   <meta charset="UTF-8" />
   <title>Kuis Hukum Administrasi Negara</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
-    .question { margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
-    .question h3 { margin-top: 0; }
-    .options label { display: block; margin: 5px 0; }
-    .result { font-weight: bold; margin-top: 20px; }
-    button { padding: 10px 20px; background: #4CAF50; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
-    button:hover { background: #45a049; }
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+    margin: 0;
+    padding: 30px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+
+  .question {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+  }
+
+  .question:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  .question h3 {
+    margin-top: 0;
+    color: #111827;
+  }
+
+  .options label {
+    display: block;
+    margin: 8px 0;
+    background-color: #f9fafb;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+  }
+
+  .options input[type="radio"] {
+    margin-right: 8px;
+  }
+
+  .options label:hover {
+    background-color: #e0f2fe;
+    border-color: #0284c7;
+  }
+
+  button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #1d4ed8;
+  }
+
+  .result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #059669;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 15px;
+    }
+
+    .question {
+      padding: 15px;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
   </style>
 </head>
 <body>
